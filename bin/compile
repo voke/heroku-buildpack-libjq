@@ -39,13 +39,13 @@ if [ ! -e /app/tmp/cache/usr/local/lib/libjq.so ]; then
   echo
   echo "-----> Build jq"
 
-  git submodule update --init --recursive --remote
+  git submodule update --init
 
-  cd modules/oniguruma
-  git checkout tags/v6.9.1
-  autoreconf -fi
-  ./configure --enable-shared
-  cd ../..
+  # cd modules/oniguruma
+  # git checkout tags/v6.9.1
+  # autoreconf -fi
+  # ./configure --enable-shared
+  # cd ../..
 
   autoreconf -fi
   ./configure --enable-shared --disable-maintainer-mode --with-oniguruma=builtin

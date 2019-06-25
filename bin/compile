@@ -31,16 +31,11 @@ if [ ! -e /app/tmp/cache/usr/local/lib/libjq.so ]; then
   echo
   echo "-----> Clone jq"
 
-  git clone https://github.com/stedolan/jq.git
+  curl -L -O https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz
+  tar -xvzf jq-1.6.tar.gz && mv jq-1.6 jq
 
   cd jq
-  git checkout tags/jq-1.6
-
-  echo
-  echo "-----> Build jq"
-
-  git submodule update --init --recursive --remote
-
+  
   cd modules/oniguruma
   autoreconf -fi
   ./configure --enable-shared

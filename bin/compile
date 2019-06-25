@@ -42,6 +42,7 @@ if [ ! -e /app/tmp/cache/usr/local/lib/libjq.so ]; then
   git submodule update --init --recursive --remote
 
   cd modules/oniguruma
+  git checkout tags/v6.9.1
   autoreconf -fi
   ./configure --enable-shared
   cd ../..

@@ -34,7 +34,7 @@ if [ ! -e /app/tmp/cache/usr/local/lib/libjq.so ]; then
   git clone https://github.com/stedolan/jq.git
 
   cd jq
-  git checkout tags/jq-1.6
+  git checkout master
 
   echo
   echo "-----> Build jq"

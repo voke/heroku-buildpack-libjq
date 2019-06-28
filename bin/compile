@@ -39,7 +39,7 @@ if [ ! -e /app/tmp/cache/usr/local/lib/libjq.so ]; then
   echo
   echo "-----> Build jq"
 
-  git submodule update --init
+  # git submodule update --init
 
   # cd modules/oniguruma
   # git checkout tags/v6.9.1
@@ -48,7 +48,7 @@ if [ ! -e /app/tmp/cache/usr/local/lib/libjq.so ]; then
   # cd ../..
 
   autoreconf -fi
-  ./configure --enable-shared --disable-docs --disable-maintainer-mode --with-oniguruma=builtin
+  ./configure --enable-shared --disable-docs --disable-maintainer-mode
   make
   make install DESTDIR=$CACHE_DIR
 fi
